@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="URL Shortener">
+        <div class="slds-m-around_small">
+
+            <lightning-input label="Enter URL"  value={url} onchange={handleUrlChange}></lightning-input>
+            <lightning-button label="Shorten URL" onclick={shortenUrl}></lightning-button>
+
+            <template if:true={shortenedUrls}>
+                <div class="slds-m-top_medium">
+                    <p>Shortened URLs:</p>
+                     <table class="slds-table slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th>Shortened URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <template for:each={shortenedUrls} for:item="shortenedUrl">
+                                <tr key={shortenedUrl}>
+                                    <td>{shortenedUrl}</td>
+                                </tr>
+                            </template>
+
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-m-top_medium">
+                    <p>Error: {error}</p>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
