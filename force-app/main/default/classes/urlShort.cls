@@ -19,6 +19,7 @@ public class urlShort {
         
 		Map<String, Object> firstMap = (Map<String, Object>)m.get('result');
 		System.debug('Content from the result: '+firstMap);
+        
         String[] emp = new String[]{'Empty'};
        	String[] url = new String[3];
         
